@@ -1,0 +1,25 @@
+/* Multi-Select Dropdown CSS */
+.multi-select-dropdown { position: relative; width: 100%; font-family: inherit; }
+.msd-input-area { border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 6px 40px 6px 12px; min-height: 40px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; background: #fcfcfc; cursor: text; position: relative; width: 100%; box-sizing: border-box; transition: all 0.2s; }
+.msd-input-area:focus-within { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); background: white; }
+.msd-tags { display: flex; flex-wrap: wrap; gap: 6px; flex-grow: 0; }
+.multi-select-dropdown.single-select .msd-tags { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.multi-select-dropdown.single-select .msd-tag { background: transparent; color: var(--text-main); padding: 0; border-radius: 0; font-size: 14px; display: inline; margin-right: 0; font-weight: normal; }
+.multi-select-dropdown.single-select .msd-tag-remove { display: none; }
+.msd-tag { background: #eff6ff; color: var(--primary-blue); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+.msd-tag-remove { cursor: pointer; opacity: 0.6; padding: 0 2px; display: inline-flex; align-items: center; justify-content: center; transition: opacity 0.2s; font-size: 14px; }
+.msd-tag-remove:hover { opacity: 1; }
+.msd-input { border: none; outline: none; flex: 1 1 auto; min-width: 60px; width: auto; height: 24px; font-size: 14px; background: transparent; color: var(--text-main); }
+.msd-input::placeholder { color: var(--text-muted); font-style: normal; }
+.msd-placeholder { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; z-index: 1; font-size: 14px; }
+.msd-input-area.has-content .msd-placeholder, .msd-input-area:focus-within .msd-placeholder { display: none; }
+.msd-arrow { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 12px; color: var(--text-muted); transition: transform 0.2s; }
+.msd-arrow.open { transform: translateY(-50%) rotate(180deg); }
+.msd-dropdown { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: white; border: 1px solid var(--border-light); border-radius: var(--radius-md); overflow-y: auto; z-index: 1001; display: none; box-shadow: var(--shadow-md); padding: 4px; max-height: 200px; }
+.msd-dropdown.open { display: block; }
+.msd-option { padding: 8px 12px; cursor: pointer; font-size: 14px; border-radius: var(--radius-sm); color: var(--text-main); margin-bottom: 2px; transition: background 0.1s; }
+.msd-option:last-child { margin-bottom: 0; }
+.msd-option:hover { background: #f3f4f6; }
+.msd-option.selected { background: #eff6ff; color: var(--primary-blue); font-weight: 500; }
+.msd-option.add-new { background: var(--success-bg); color: var(--success-color); font-weight: 500; }
+.msd-option.add-new:hover { background: #d1fae5; }

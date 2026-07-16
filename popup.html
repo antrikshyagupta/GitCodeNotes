@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>GitCodeNotes</title>
+  <link rel="stylesheet" type="text/css" href="css/shared.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/components.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="app-container" style="padding: 0;">
+    <main class="apple-card" style="padding: 16px 20px; border-radius: 0; box-shadow: none; min-height: 100vh;">
+
+      <!-- Already Solved View -->
+      <div id="alreadySolvedView" style="display: none;">
+        <div style="position: relative; text-align: center; margin-bottom: 24px; margin-top: 8px;">
+          <h2
+            style="color: var(--success-color); display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; margin: 0;">
+            <i class="bi bi-check-circle-fill" style="font-size: 28px;"></i> Already Solved
+          </h2>
+          <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 4px;">
+            <button class="settings-btn" id="settingsButtonSolved" type="button" title="Settings"
+              style="background: #f3f4f6; color: #6b7280; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: 0.2s;">
+              <i class="bi bi-gear-fill"></i>
+            </button>
+            <button id="closeSidebarBtnSolved" type="button" title="Close"
+              style="background: transparent; color: #9ca3af; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: 0.2s;">
+              <i class="bi bi-x-lg" style="font-size: 16px; -webkit-text-stroke: 1px;"></i>
+            </button>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 15px; margin-bottom: 24px;">You have already saved a solution<br />for
+          this problem.</p>
+
+        <div id="submissionsListContainer" style="margin-bottom: 20px;">
+          <!-- Submissions injected here via JS -->
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <button class="btn btn-primary w-full" id="btnAddNewSubmission" type="button">
+            <i class="bi bi-plus-circle"></i> Add New Submission
+          </button>
+          <button class="btn btn-ghost w-full" id="btnViewOnGitHub" type="button" style="color: var(--primary-blue);">
+            <i class="bi bi-box-arrow-up-right"></i> View on GitHub
+          </button>
+          <button class="btn btn-ghost-danger w-full" id="btnDeleteProblem" type="button">
+            <i class="bi bi-trash"></i> Delete Problem
+          </button>
+        </div>
+      </div>
+
+      <!-- Save Form View -->
+      <form id="saveForm" style="display: flex; flex-direction: column; gap: 12px;">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-1">
+          <h1 style="font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.5px; color: #111827;">GitCodeNotes
+          </h1>
+          <div class="flex items-center gap-1">
+            <button class="settings-btn" id="settingsButton" type="button" title="Settings"
+              style="background: #f3f4f6; color: #6b7280; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: 0.2s;">
+              <i class="bi bi-gear-fill"></i>
+            </button>
+            <button id="closeSidebarBtn" type="button" title="Close"
+              style="background: transparent; color: #9ca3af; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: 0.2s;">
+              <i class="bi bi-x-lg" style="font-size: 16px; -webkit-text-stroke: 1px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Title -->
+        <div class="form-group" style="margin: 0;">
+          <label for="questionTitle" class="form-label"
+            style="font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 6px;">Question
+            Title</label>
+          <input type="text" class="form-control" id="questionTitle" placeholder="e.g. Two Sum"
+            style="border-radius: 10px; padding: 12px; font-size: 14px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);" />
+        </div>
+
+        <!-- Tags -->
+        <div class="form-group" style="margin: 0;">
+          <label for="tagsDropdown" class="form-label"
+            style="font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 6px;">Tags</label>
+          <div id="tagsDropdown" class="multi-select-dropdown"
+            style="border-radius: 10px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);"></div>
+        </div>
+
+        <!-- Note -->
+        <div class="form-group" style="margin: 0;">
+          <textarea id="note" class="form-control" placeholder="Enter a personal note, explanation, or intuition..."
+            rows="4"
+            style="border-radius: 10px; padding: 12px; font-size: 14px; resize: vertical; box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);"></textarea>
+        </div>
+
+        <!-- Code Section -->
+        <div class="form-group"
+          style="margin: 0; border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; background: #fafafa; box-shadow: inset 0 1px 2px rgba(0,0,0,0.01);">
+          <div style="padding: 8px 12px; border-bottom: 1px solid var(--border-light); background: #f8f9fa;">
+            <label for="code"
+              style="margin: 0; font-weight: 600; font-size: 13px; color: var(--text-main); display: flex; align-items: center; gap: 6px;"><i
+                class="bi bi-code-slash" style="color: var(--primary-blue);"></i> Solution Code</label>
+          </div>
+          <textarea id="code" class="form-control" placeholder="Paste your accepted code here..." rows="5"
+            style="border: none; border-radius: 0; padding: 12px; font-size: 13px; font-family: monospace; resize: vertical; background: #ffffff;"></textarea>
+        </div>
+
+        <div class="flex justify-between items-center gap-4 mt-2">
+          <!-- Level -->
+          <div style="flex: 1;">
+            <label for="level" class="form-label"
+              style="font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 6px;">Difficulty</label>
+            <div class="difficulty-toggle" style="display: flex; background: #f3f4f6; border-radius: 10px; padding: 4px; gap: 4px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);">
+              <div class="diff-btn" data-val="Easy" style="flex:1; text-align:center; padding:8px 6px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; color:#6b7280;">Easy</div>
+              <div class="diff-btn active" data-val="Medium" style="flex:1; text-align:center; padding:8px 6px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; background:white; box-shadow:0 1px 3px rgba(0,0,0,0.1); color:var(--primary-blue);">Medium</div>
+              <div class="diff-btn" data-val="Hard" style="flex:1; text-align:center; padding:8px 6px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; color:#6b7280;">Hard</div>
+            </div>
+            <input type="hidden" id="level" value="Medium">
+          </div>
+          <!-- Revision Checkbox -->
+          <div class="flex items-center justify-center"
+            style="flex: 1; height: 42px; margin-top: 24px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; cursor: pointer;"
+            onclick="const cb = document.getElementById('revisionNeeded'); cb.click();">
+            <input type="checkbox" id="revisionNeeded"
+              style="margin-right: 8px; width: 16px; height: 16px; accent-color: var(--primary-blue); cursor: pointer;"
+              onclick="event.stopPropagation()">
+            <label for="revisionNeeded"
+              style="font-size: 13px; font-weight: 600; color: var(--primary-blue); cursor: pointer; margin: 0;">Needs
+              Revision</label>
+          </div>
+        </div>
+
+        <!-- Save Button -->
+        <button class="btn btn-primary w-full" id="saveButton" type="submit"
+          style="margin-top: 8px; font-size: 15px; font-weight: 600; padding: 14px; border-radius: 10px; background: linear-gradient(135deg, #0070f3, #0051b3); box-shadow: 0 4px 12px rgba(0,112,243,0.25); border: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="bi bi-cloud-arrow-up-fill"></i> Save Question
+        </button>
+      </form>
+    </main>
+  </div>
+  <script src="src/content/tagMapper.js"></script>
+  <script type="module" src="src/popup/popup.js"></script>
+</body>
+
+</html>

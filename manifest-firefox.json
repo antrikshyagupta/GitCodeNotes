@@ -1,0 +1,47 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/logo.png",
+         "16": "icons/logo.png",
+         "48": "icons/logo.png"
+      }
+   },
+   "background": {
+      "scripts": ["src/background/service-worker.js"],
+      "type": "module"
+   },
+   "browser_specific_settings": {
+      "gecko": {
+         "id": "gitcodenotes@example.com",
+         "strict_min_version": "109.0"
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "src/content/tagMapper.js", "src/content/content.js" ],
+      "matches": [ "https://codeforces.com/*", "https://leetcode.com/*", "https://www.codechef.com/*", "https://atcoder.jp/*", "https://www.interviewbit.com/*", "https://www.hackerrank.com/*", "https://www.geeksforgeeks.org/*" ]
+   } ],
+   "description": "Organize coding problems across platforms into Google Sheets. Auto-populates difficulty and normalized tags.",
+   "host_permissions": [ "https://codeforces.com/*", "https://leetcode.com/*", "https://www.codechef.com/*", "https://atcoder.jp/*", "https://www.interviewbit.com/*", "https://www.hackerrank.com/*", "https://www.geeksforgeeks.org/*", "https://api.github.com/*" ],
+   "icons": {
+      "128": "icons/logo.png",
+      "16": "icons/logo.png",
+      "48": "icons/logo.png"
+   },
+   "manifest_version": 3,
+   "name": "GitCodeNotes",
+   "short_name": "GitCodeNotes",
+   "options_page": "options.html",
+   "permissions": [ "storage", "activeTab", "tabs", "scripting" ],
+   "version": "1.0.0",
+   "web_accessible_resources": [{
+      "resources": [
+         "popup.html",
+         "css/*",
+         "src/popup/*",
+         "src/components/*",
+         "icons/*",
+         "img/*"
+      ],
+      "matches": ["<all_urls>"]
+   }]
+}

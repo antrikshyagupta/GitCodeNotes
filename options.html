@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GitCodeNotes Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/shared.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <div class="app-container" style="max-width: 1400px; width: 95%; margin: 16px auto;">
+      
+      <div class="flex items-center gap-4 mb-6" style="padding-left: 16px;">
+        <div style="background: linear-gradient(135deg, #0070f3, #0051b3); width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; box-shadow: 0 8px 16px rgba(0,112,243,0.2);">
+          <i class="bi bi-gear-fill"></i>
+        </div>
+        <div>
+          <h2 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; color: #111827;">GitCodeNotes Settings</h2>
+          <p style="margin: 4px 0 0 0; font-size: 15px; color: #6b7280;">Securely link your repository and manage local extension data.</p>
+        </div>
+      </div>
+
+      <main class="apple-card" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; padding: 40px; align-items: start;">
+        
+        <!-- Left Column: Setup Guide -->
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <i class="bi bi-rocket-takeoff" style="font-size: 24px; color: var(--primary-blue);"></i>
+              <h3 style="margin: 0; font-size: 20px; font-weight: 600; color: var(--text-main);">Quick Setup Guide</h3>
+            </div>
+            
+            <div class="setup-instructions" style="background: #ffffff; border: 1px solid var(--border-light); border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+              
+              <div class="flex gap-4 mb-8">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: #eff6ff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,112,243,0.1);">1</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px; color: var(--text-main);">Generate a Fine-Grained Access Token</div>
+                  <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Navigate to GitHub's <b>Developer Settings → Personal Access Tokens → Fine-grained tokens</b>. Select your target repository and ensure you grant exactly <b>Read and Write</b> access to the "Contents" permission scope.</div>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-8">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: #eff6ff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,112,243,0.1);">2</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px; color: var(--text-main);">Prepare Your Repository</div>
+                  <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Create an empty GitHub repository dedicated to tracking your algorithmic coding solutions. This acts as your personal cloud-synced notebook.</div>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: #eff6ff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,112,243,0.1);">3</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px; color: var(--text-main);">Connect Your Data</div>
+                  <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Paste your generated Personal Access Token (PAT), exact GitHub username, and repository name into the secure configuration panel.</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Data Maintenance Section -->
+          <div style="padding: 24px; background: #fafafa; border: 1px solid var(--border-light); border-radius: 16px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.01);">
+            <div class="flex justify-between items-center gap-4">
+              <div>
+                <h3 style="color: var(--text-main); font-size: 16px; margin-bottom: 6px; font-weight: 600;">Data Maintenance</h3>
+                <p style="color: var(--text-muted); font-size: 13px; margin: 0; line-height: 1.5;">Refresh your local cache to instantly sync tags or reset your session data directly from GitHub.</p>
+              </div>
+              <div class="flex flex-col gap-2 shrink-0">
+                <button class="btn btn-ghost-success" id="refreshDropdownsButton" type="button" title="Refresh tags" style="padding: 8px 16px; font-size: 13px;">
+                  <i class="bi bi-arrow-clockwise"></i> Refresh Tags
+                </button>
+                <button class="btn btn-ghost-danger" id="clearCacheButton" type="button" title="Clear cache" style="padding: 8px 16px; font-size: 13px;">
+                  <i class="bi bi-trash"></i> Clear Cache
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Forms -->
+        <div style="display: flex; flex-direction: column; gap: 32px;">          <div style="background: white; border: 1px solid var(--border-light); border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+            <div class="flex items-center gap-3 mb-6">
+              <i class="bi bi-github" style="font-size: 22px; color: #333;"></i>
+              <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: var(--text-main);">Repository Configuration</h3>
+            </div>
+
+            <div class="form-group" style="position: relative; margin-bottom: 24px;">
+              <label for="ghPat" class="form-label" style="font-weight: 600; font-size: 14px;">Secure Access Token (PAT)</label>
+              <div style="position: relative;">
+                <i class="bi bi-key-fill" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                <input type="password" class="form-control" id="ghPat" placeholder="github_pat_xxxxxxxxxxxx..." style="padding-left: 44px; padding-top: 12px; padding-bottom: 12px; font-family: monospace; font-size: 14px;" />
+              </div>
+            </div>
+
+            <div class="form-group" style="position: relative; margin-bottom: 24px;">
+              <label for="ghOwner" class="form-label" style="font-weight: 600; font-size: 14px;">GitHub Username</label>
+              <div style="position: relative;">
+                <i class="bi bi-person-fill" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                <input type="text" class="form-control" id="ghOwner" placeholder="e.g. torvalds" style="padding-left: 44px; padding-top: 12px; padding-bottom: 12px; font-size: 14px;" />
+              </div>
+            </div>
+
+            <div class="form-group" style="position: relative; margin-bottom: 32px;">
+              <label for="ghRepo" class="form-label" style="font-weight: 600; font-size: 14px;">Target Repository Name</label>
+              <div style="position: relative;">
+                <i class="bi bi-journal-code" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                <input type="text" class="form-control" id="ghRepo" placeholder="e.g. leetcode-solutions" style="padding-left: 44px; padding-top: 12px; padding-bottom: 12px; font-size: 14px;" />
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="saveConfig" style="width: 100%; padding: 14px; font-size: 15px; font-weight: 600; border-radius: 8px;">
+              <i class="bi bi-cloud-arrow-up-fill" style="margin-right: 8px;"></i> Save Secure Configuration
+            </button>
+
+            <div id="configStatus" style="margin-top: 16px; font-size: 14px; font-weight: 500; text-align: center;"></div>
+          </div>
+          
+        </div>
+
+      </main>
+    </div>
+
+    <script src="src/content/tagMapper.js"></script>
+    <script type="module" src="src/options/options.js"></script>
+  </body>
+</html>
