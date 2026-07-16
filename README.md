@@ -20,8 +20,8 @@ Before loading the extension into your browser, you must rename the correct mani
 ### Option 2: Pre-packaged Releases
 Alternatively, you can download the pre-packaged zip files from the Releases page. These packages already have the manifest renamed and configured for your specific browser.
 
-[![Download for Chromium](https://img.shields.io/badge/Download_for-Chromium_(Chrome,_Edge,_Brave)-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#) <!-- Add your GitHub release link here -->
-[![Download for Firefox](https://img.shields.io/badge/Download_for-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](#) <!-- Add your GitHub release link here -->
+[![Download for Chromium](https://img.shields.io/badge/Download_for-Chromium_(Chrome,_Edge,_Brave)-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/antrikshyagupta/GitCodeNotes/releases/download/v1.0.0/GitCodeNotes-Chromium.zip) <!-- Add your GitHub release link here -->
+[![Download for Firefox](https://img.shields.io/badge/Download_for-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://github.com/antrikshyagupta/GitCodeNotes/releases/download/v1.0.0/GitCodeNotes-Firefox.zip) <!-- Add your GitHub release link here -->
 
 **How to Install:**
 1. Click the download button above for your browser and unzip the folder.
