@@ -58,9 +58,9 @@ Before you can start saving problems, you need to connect the extension to your 
 
 1. **Create a GitHub Repository**: Create a new, empty repository on GitHub where you want your notes to be saved (e.g., `cp-tracker`).
 2. **Generate a Personal Access Token**:
-   - Go to your GitHub Settings -> Developer settings -> Personal access tokens -> **Tokens (classic)**.
-   - Click **Generate new token (classic)**.
-   - Give it a name, set the expiration, and check the **`repo`** scope (this gives it permission to read/write to your repositories).
+   - Go to your GitHub Settings -> Developer settings -> Personal access tokens -> **Fine-grained tokens**.
+   - Click **Generate new token**.
+   - Select your target repository and ensure you grant exactly Read and Write access to the "**Contents"** permission scope.
    - Generate the token and copy it.
 3. **Configure the Extension**:
    - Click the GitCodeNotes extension icon in your browser.
