@@ -57,20 +57,18 @@ ${data.code || ""}
 \`\`\`
 `;
     const b64Content = btoa(unescape(encodeURIComponent(content)));
-    
+
     const [existing, existingIndex] = await Promise.all([
       this.request("GET", path),
       this.request("GET", "solved_index.json")
     ]);
 
-    await Promise.all([
-      this.request("PUT", path, {
-        message: `Solve ${data.question}`,
-        content: b64Content,
-        sha: existing ? existing.sha : undefined
-      }),
-      this.updateIndexWithData(data.url, path, existingIndex)
-    ]);
+    await this.request("PUT", path, {
+      message: `Solve ${data.question}`,
+      content: b64Content,
+      sha: existing ? existing.sha : undefined
+    });
+    await this.updateIndexWithData(data.url, path, existingIndex);
 
     return { success: true, path };
   }
@@ -105,16 +103,14 @@ ${data.code || ""}
       this.request("GET", "solved_index.json")
     ]);
 
-    const ops = [ this.updateIndexWithData(url, null, existingIndex) ];
-
     if (existing) {
-      ops.push(this.request("DELETE", path, {
+      await this.request("DELETE", path, {
         message: `Delete problem`,
         sha: existing.sha
-      }));
+      });
     }
 
-    await Promise.all(ops);
+    await this.updateIndexWithData(url, null, existingIndex);
     return { success: true };
   }
 
@@ -128,13 +124,13 @@ ${data.code || ""}
     if (existing) {
       index = JSON.parse(decodeURIComponent(escape(atob(existing.content))));
     }
-    
+
     if (path === null) {
       delete index[url];
     } else {
       index[url] = path;
     }
-    
+
     const b64Index = btoa(unescape(encodeURIComponent(JSON.stringify(index))));
     await this.request("PUT", "solved_index.json", {
       message: path === null ? "Remove from index" : "Update index",
