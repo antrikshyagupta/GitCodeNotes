@@ -37,7 +37,7 @@ Before loading the extension into your browser, you must rename the correct mani
 2. **For Chrome/Edge/Brave**: Rename `manifest-chromium.json` to `manifest.json`.
 3. **For Firefox**: Rename `manifest-firefox.json` to `manifest.json`.
 4. Load the unpacked extension into your browser:
-   - **Chromium Browsers**: Go to `chrome://extensions`, turn on **Developer mode**, and click **Load unpacked**. Select the folder.
+   - **Chromium Browsers**: Go to `chrome://extensions`, turn on **Developer mode**, and click **Load unpacked**. Select the folder where `manifest.json` is located.
    - **Firefox**: Go to `about:debugging`, click **This Firefox**, click **Load Temporary Add-on**, and select the `manifest.json` file.
 
 ### Option 2: Pre-packaged Releases
