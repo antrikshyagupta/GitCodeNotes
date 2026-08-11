@@ -113,4 +113,5 @@ Before you can start saving problems, you need to connect the extension to your 
 ## ⭐️ Star this repo
 
 If you find GitCodeNotes helpful, please consider giving it a star ⭐️ on GitHub! It helps others discover the project and keeps the maintainer motivated.
+
 PS: tell your cat i said pspspspsspsss
