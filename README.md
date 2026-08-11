@@ -4,6 +4,25 @@ GitCodeNotes is a powerful, cross-browser extension designed for competitive pro
 
 No more scattered local files or lost solutions—keep a clean, centralized, and version-controlled record of your entire problem-solving journey!
 
+## Setup and Working Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=pu5EVyXxQco" target="_blank" rel="noopener noreferrer" style="display: inline-block; position: relative; width: 760px; max-width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.18); text-decoration: none;">
+    <img src="https://img.youtube.com/vi/pu5EVyXxQco/maxresdefault.jpg" alt="GitCodeNotes setup and working guide" width="760" style="display: block; width: 100%; height: auto; border-radius: 12px;" />
+    <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.18);">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 76px; height: 76px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 8px 18px rgba(0,0,0,0.2);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Play video">
+          <path d="M8 5.5V18.5L18 12L8 5.5Z" fill="#111827"/>
+        </svg>
+      </span>
+    </span>
+  </a>
+</p>
+
+Click the thumbnail to watch the setup walkthrough and see how the extension works in practice.
+
+---
+
 ##  Download & Install
 
 ### Option 1: Install from Source (Preferred)
@@ -32,25 +51,6 @@ Alternatively, you can download the pre-packaged zip files from the Releases pag
 > [!TIP]
 > **Pin for Quick Access 📌**
 > After installing, don't forget to click the puzzle piece icon (🧩) in your browser toolbar and "Pin" (📌) GitCodeNotes so you can open the sidebar instantly while coding!
-
----
-
-## Setup and Working Video
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=pu5EVyXxQco" target="_blank" rel="noopener noreferrer" style="display: inline-block; position: relative; width: 760px; max-width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.18); text-decoration: none;">
-    <img src="https://img.youtube.com/vi/pu5EVyXxQco/maxresdefault.jpg" alt="GitCodeNotes setup and working guide" width="760" style="display: block; width: 100%; height: auto; border-radius: 12px;" />
-    <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.18);">
-      <span style="display: inline-flex; align-items: center; justify-content: center; width: 76px; height: 76px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 8px 18px rgba(0,0,0,0.2);">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Play video">
-          <path d="M8 5.5V18.5L18 12L8 5.5Z" fill="#111827"/>
-        </svg>
-      </span>
-    </span>
-  </a>
-</p>
-
-Click the thumbnail to watch the setup walkthrough and see how the extension works in practice.
 
 ---
 
