@@ -80,3 +80,9 @@ Before you can start saving problems, you need to connect the extension to your 
 6. That's it! Your solution, along with the full problem statement, will immediately be committed as a Markdown file in your repository. 
 
 *If you click the extension on an unsupported page (like the Google homepage), it will show a clean fallback page listing all supported platforms.*
+
+---
+
+## ⭐️ Show your support
+
+If you find GitCodeNotes helpful, please consider giving it a star on GitHub! It helps others discover the project and keeps the maintainer motivated.
