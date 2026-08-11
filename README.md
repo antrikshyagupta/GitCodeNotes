@@ -4,7 +4,7 @@ GitCodeNotes is a powerful, cross-browser extension designed for competitive pro
 
 No more scattered local files or lost solutions—keep a clean, centralized, and version-controlled record of your entire problem-solving journey!
 
-[Setup/Working Video](#video) • [Installation](#install) • [Features](#features) • [Configuration](#configuration) • [Usage](#usage) • [Star This Repo](#support)
+[Setup/Working Video](#video) • [Installation](#install) • [Features](#features) • [Configuration](#configuration) • [Usage](#usage) • [Hello :)](#support)
 
 <a id="video"></a>
 ## Setup/Working Video
@@ -112,6 +112,5 @@ Before you can start saving problems, you need to connect the extension to your 
 <a id="support"></a>
 ## ⭐️ Star this repo
 
-If you find GitCodeNotes helpful, please consider giving it a star on GitHub! It helps others discover the project and keeps the maintainer motivated.
-
-[⭐ Star GitCodeNotes](https://github.com/antrikshyagupta/GitCodeNotes)
+If you find GitCodeNotes helpful, please consider giving it a star ⭐️ on GitHub! It helps others discover the project and keeps the maintainer motivated.
+PS: tell your cat i said pspspspsspsss
