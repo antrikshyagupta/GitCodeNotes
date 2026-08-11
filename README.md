@@ -4,6 +4,16 @@ GitCodeNotes is a powerful, cross-browser extension designed for competitive pro
 
 No more scattered local files or lost solutions—keep a clean, centralized, and version-controlled record of your entire problem-solving journey!
 
+## Setup and Working Video
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=pu5EVyXxQco" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.youtube.com/vi/pu5EVyXxQco/maxresdefault.jpg" alt="GitCodeNotes setup and working guide" width="900" />
+  </a>
+</p>
+
+Click the thumbnail to watch the setup walkthrough and see how the extension works in practice.
+
 ##  Download & Install
 
 ### Option 1: Install from Source (Preferred)
