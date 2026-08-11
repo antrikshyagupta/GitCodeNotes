@@ -1,5 +1,5 @@
 import { showLoadingState, hideLoadingState, showError, showConfigurationRequired, showUnsupportedPage, showToast, renderSubmissionsList, $ } from './popupUI.js';
-import { normalizeProblemUrl, isSupportedProblemPage } from './popupLogic.js';
+import { normalizeProblemUrl, isSupportedProblemPage, detectLanguage } from './popupLogic.js';
 import { githubAPI } from '../background/githubAPI.js';
 import { cacheManager } from '../background/cacheManager.js';
 import MultiSelectDropdown from '../components/multi-select-dropdown.js';
@@ -295,7 +295,8 @@ async function handleSave(tab) {
       level: $("level").value,
       tags,
       url: normalizeProblemUrl(tab.url),
-      revisionNeeded: $("revisionNeeded").checked ? "Yes" : "No"
+      revisionNeeded: $("revisionNeeded").checked ? "Yes" : "No",
+      language: detectLanguage($("code").value)
     };
 
     if (window.isEditingSubmission || window.isAppending) {
@@ -313,7 +314,7 @@ async function handleSave(tab) {
         window.baseDocument = window.baseDocument.replace(/\n?> \[!WARNING\]\n> \*\*Revision Needed!\*\*\n\n?/, '\n');
       }
 
-      const contentString = `\n**Notes:**\n${data.note}\n\n**Code:**\n\`\`\`\n${data.code}\n\`\`\`\n`;
+      const contentString = `\n**Notes:**\n${data.note}\n\n**Code:**\n\`\`\`${data.language}\n${data.code}\n\`\`\`\n`;
 
       if (window.isEditingSubmission) {
         window.submissions[window.editingSubmissionIndex].content = contentString;

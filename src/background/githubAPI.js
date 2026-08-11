@@ -52,7 +52,7 @@ ${data.statement || "No statement extracted"}
 ${data.note || "No notes provided"}
 
 **Code:**
-\`\`\`
+\`\`\`${data.language || ""}
 ${data.code || ""}
 \`\`\`
 `;

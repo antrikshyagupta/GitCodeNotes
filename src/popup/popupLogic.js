@@ -47,3 +47,48 @@ export function isSupportedProblemPage(url) {
 
     return supportedPlatforms.some(platform => platform.pattern.test(url));
   }
+
+export function detectLanguage(code) {
+    if (!code) return "";
+    
+    const c = code.toLowerCase();
+    
+    if (c.includes('#include') || c.includes('using namespace std') || c.includes('cout <<') || c.includes('vector<') || c.includes('std::')) {
+        return 'cpp';
+    }
+    if (c.includes('public static void main') || c.includes('system.out.print') || c.includes('import java.') || c.includes('public class ')) {
+        return 'java';
+    }
+    if (/def\s+\w+\s*\(/.test(c) || c.includes('import sys') || c.includes('pass\n') || c.includes('elif ') || c.includes('self.')) {
+        return 'python';
+    }
+    if (c.includes('console.log') || /function\s*\(/.test(c) || /const\s+\w+\s*=/.test(c) || /let\s+\w+\s*=/.test(c) || c.includes('=>')) {
+        return 'javascript';
+    }
+    if (c.includes('package main') || c.includes('import "fmt"') || /func\s+\w+/.test(c)) {
+        return 'go';
+    }
+    if (/fn\s+\w+/.test(c) || c.includes('println!') || c.includes('let mut ')) {
+        return 'rust';
+    }
+    if (c.includes('#include <stdio.h>') || c.includes('printf(')) {
+        return 'c';
+    }
+    if (c.includes('<?php') || c.includes('echo ')) {
+        return 'php';
+    }
+    if (c.includes('using system;')) {
+        return 'csharp';
+    }
+    
+    // Leetcode/platform specific wrappers
+    if (code.includes('class Solution')) {
+        if (code.includes('public:')) return 'cpp';
+        if (code.includes('public ') || code.includes('String ') || code.includes('List<')) return 'java';
+        if (code.includes('self,')) return 'python';
+        if (code.includes('function(') || code.includes('var ') || code.includes('let ')) return 'javascript';
+    }
+    
+    // Default fallback
+    return 'cpp';
+}
