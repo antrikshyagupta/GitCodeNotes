@@ -4,7 +4,10 @@ GitCodeNotes is a powerful, cross-browser extension designed for competitive pro
 
 No more scattered local files or lost solutions—keep a clean, centralized, and version-controlled record of your entire problem-solving journey!
 
-## Setup and Working Video
+[Setup/Working Video](#video) • [Installation](#install) • [Features](#features) • [Configuration](#configuration) • [Usage](#usage) • [Star This Repo](#support)
+
+<a id="video"></a>
+## Setup/Working Video
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=pu5EVyXxQco" target="_blank" rel="noopener noreferrer" style="display: inline-block; position: relative; width: 760px; max-width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.18); text-decoration: none;">
@@ -23,7 +26,8 @@ Click the thumbnail to watch the setup walkthrough and see how the extension wor
 
 ---
 
-##  Download & Install
+<a id="install"></a>
+##  Installation
 
 ### Option 1: Install from Source (Preferred)
 If you are cloning or downloading this repository directly from the source code, please note that the root directory contains two manifest files: `manifest-chromium.json` and `manifest-firefox.json`.
@@ -54,6 +58,7 @@ Alternatively, you can download the pre-packaged zip files from the Releases pag
 
 ---
 
+<a id="features"></a>
 ##  Features
 
 - **Multi-Platform Support**: Automatically scrapes problem titles, URLs, and complex problem statements (converting MathJax/KaTeX to clean GitHub Markdown) from:
@@ -71,6 +76,7 @@ Alternatively, you can download the pre-packaged zip files from the Releases pag
 
 ---
 
+<a id="configuration"></a>
 ##  Configuration
 
 Before you can start saving problems, you need to connect the extension to your GitHub account.
@@ -89,6 +95,7 @@ Before you can start saving problems, you need to connect the extension to your 
 
 ---
 
+<a id="usage"></a>
 ##  Usage
 
 1. Navigate to any coding problem on a supported platform (e.g., a LeetCode problem).
@@ -102,6 +109,9 @@ Before you can start saving problems, you need to connect the extension to your 
 
 ---
 
-## ⭐️ Show your support
+<a id="support"></a>
+## ⭐️ Star this repo
 
 If you find GitCodeNotes helpful, please consider giving it a star on GitHub! It helps others discover the project and keeps the maintainer motivated.
+
+[⭐ Star GitCodeNotes](https://github.com/antrikshyagupta/GitCodeNotes)
